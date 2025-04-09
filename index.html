@@ -1,63 +1,91 @@
-// Nova Algorithm Website - Basic Structure in React with Tailwind CSS
-
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] to-[#1e293b] text-white">
-      {/* Hero Section */}
-      <section className="text-center py-20 px-4">
-        <h1 className="text-5xl font-bold mb-4">Nova Algorithm™</h1>
-        <p className="text-xl max-w-xl mx-auto mb-6">
-          Unlock powerful trading signals, backtesting tools, and real-time alerts — all in one place.
-        </p>
-        <Button className="text-lg px-6 py-2 rounded-2xl bg-indigo-600 hover:bg-indigo-700">
-          Get Started
-        </Button>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 bg-[#1e293b] px-4">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              title: "Real-Time Buy/Sell Signals",
-              desc: "Accurate, trend-based signals optimized for any asset class.",
-            },
-            {
-              title: "Built-in Backtesting",
-              desc: "Visualize historical performance with win-rate and RR ratio.",
-            },
-            {
-              title: "Smart Alerts",
-              desc: "Get notified instantly when key setups appear on your chart.",
-            },
-          ].map((feature, idx) => (
-            <Card key={idx} className="bg-[#334155]">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-300">{feature.desc}</p>
-              </CardContent>
-            </Card>
-          ))}
+<!-- Trading Charts Section -->
+<section id="trading-charts" class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">GOLD TRADING EXAMPLES</h2>
+            <div class="divider"></div>
+            <p class="lead">See NOVA Algorithm in action with real trading scenarios</p>
         </div>
-      </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">What Traders Are Saying</h2>
-          <p className="mb-8 italic">“Nova ne meri trading strategy ko next level pe le gaya!” – Ali T.</p>
-          <p className="italic">“Signals itne accurate hain ke maine 3x ROI kiya 2 weeks mein.” – Sara M.</p>
+        <!-- Chart 1 -->
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="chart-container bg-dark p-3 rounded">
+                    <img src="https://via.placeholder.com/800x500/000000/FFD700?text=GOLD+CHART+1+BUY+SIGNAL+400+PIPS" 
+                         alt="Gold Trading Chart 1" class="img-fluid rounded border border-gold">
+                    <div class="text-center mt-3">
+                        <span class="badge bg-gold text-black me-2">BUY SIGNAL</span>
+                        <span class="badge bg-success me-2">400 PIPS PROFIT</span>
+                        <span class="badge bg-dark text-gold">XAU/USD 4H</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="text-gold">Precision Entry on Gold</h3>
+                <p>NOVA identified this buy opportunity on XAU/USD (Gold) with clear confirmation signals:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Price above key moving averages</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> RSI showing bullish divergence</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Volume spike confirming momentum</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Fibonacci support level holding</li>
+                </ul>
+                <p>The trade captured <strong class="text-gold">400 pips</strong> over the next 5 days.</p>
+                <a href="#" class="btn btn-outline-gold" onclick="showPage('pricing')">Get These Signals</a>
+            </div>
         </div>
-      </section>
 
-      {/* Footer */}
-      <footer className="bg-[#0f172a] text-center py-10 text-gray-400 text-sm">
-        © {new Date().getFullYear()} Nova Algorithm. All rights reserved.
-      </footer>
+        <!-- Chart 2 -->
+        <div class="row align-items-center mb-5 flex-lg-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="chart-container bg-dark p-3 rounded">
+                    <img src="https://via.placeholder.com/800x500/000000/FFD700?text=GOLD+CHART+2+BUY+SIGNAL+500+PIPS" 
+                         alt="Gold Trading Chart 2" class="img-fluid rounded border border-gold">
+                    <div class="text-center mt-3">
+                        <span class="badge bg-gold text-black me-2">BUY SIGNAL</span>
+                        <span class="badge bg-success me-2">500 PIPS PROFIT</span>
+                        <span class="badge bg-dark text-gold">XAU/USD 1D</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="text-gold">Trend Continuation Setup</h3>
+                <p>This daily chart shows NOVA catching a major trend continuation:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Break of key resistance level</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> MACD crossover confirmation</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Bullish candle pattern</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Low volatility retracement</li>
+                </ul>
+                <p>The trade captured <strong class="text-gold">500 pips</strong> over 2 weeks.</p>
+                <a href="#" class="btn btn-outline-gold" onclick="showPage('pricing')">Get These Signals</a>
+            </div>
+        </div>
+
+        <!-- Chart 3 -->
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="chart-container bg-dark p-3 rounded">
+                    <img src="https://via.placeholder.com/800x500/000000/FFD700?text=GOLD+CHART+3+BUY+SIGNAL+450+PIPS" 
+                         alt="Gold Trading Chart 3" class="img-fluid rounded border border-gold">
+                    <div class="text-center mt-3">
+                        <span class="badge bg-gold text-black me-2">BUY SIGNAL</span>
+                        <span class="badge bg-success me-2">450 PIPS PROFIT</span>
+                        <span class="badge bg-dark text-gold">XAU/USD 1H</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="text-gold">Intraday Gold Opportunity</h3>
+                <p>NOVA's intraday signals captured this 450 pip move on the 1-hour chart:</p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Price bouncing off trendline</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Stochastic oversold condition</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> Volume increasing on breakout</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-gold me-2"></i> NOVA proprietary indicator confirmation</li>
+                </ul>
+                <p>The trade captured <strong class="text-gold">450 pips</strong> in 3 trading sessions.</p>
+                <a href="#" class="btn btn-outline-gold" onclick="showPage('pricing')">Get These Signals</a>
+            </div>
+        </div>
     </div>
-  );
-}
+</section>
